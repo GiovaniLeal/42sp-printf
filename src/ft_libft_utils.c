@@ -51,55 +51,19 @@ char	*ft_put_str_generic(const char *str, int do_alloc)
 	return (buffer);
 }
 
-/* ************************************************************************** */
-/* STRING LENGTH FUNCTION - RETURNS LENGTH OF STRING                          */
-/* ************************************************************************** */
-int	ft_strlen(const char *str)
-{
-	size_t	count;
+// /* ************************************************************************** */
+// /* STRING DUPLICATE - ALLOCATES NEW COPY OF STRING                            */
+// /* ************************************************************************** */
+// char	*ft_strdup(const char *str)
+// {
+// 	size_t	len;
+// 	char	*buffer;
 
-	count = 0;
-	if (!str)
-		return (6);
-	while (str[count])
-		count++;
-	return ((int)count);
-}
-
-/* ************************************************************************** */
-/* STRING DUPLICATE - ALLOCATES NEW COPY OF STRING                            */
-/* ************************************************************************** */
-char	*ft_strdup(const char *str)
-{
-	size_t	len;
-	char	*buffer;
-
-	len = ft_strlen(str);
-	buffer = malloc(len + 1);
-	if (!buffer)
-		return (NULL);
-	ft_memcpy(buffer, str, len);
-	buffer[len] = '\0';
-	return (buffer);
-}
-
-/* ************************************************************************** */
-/* MEMORY COPY FUNCTION - COPIES N BYTES FROM SRC TO DEST                     */
-/* ************************************************************************** */
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	unsigned char		*dest_bytes;
-	const unsigned char	*src_bytes;
-
-	if (!dest && !src && n > 0)
-		return (NULL);
-	dest_bytes = (unsigned char *)dest;
-	src_bytes = (const unsigned char *)src;
-	while (n-- > 0)
-	{
-		*dest_bytes = *src_bytes;
-		dest_bytes++;
-		src_bytes++;
-	}
-	return (dest);
-}
+// 	len = ft_strlen(str);
+// 	buffer = malloc(len + 1);
+// 	if (!buffer)
+// 		return (NULL);
+// 	ft_memcpy(buffer, str, len);
+// 	buffer[len] = '\0';
+// 	return (buffer);
+// }
